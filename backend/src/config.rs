@@ -40,7 +40,7 @@ impl Default for WebhookConfig {
     fn default() -> Self {
         Self {
             enabled: false,
-            url: String::new(),
+            url: "https://www.pushplus.plus/send?token=".to_string(),
             forward_sms: true,
             forward_calls: true,
             headers: HashMap::new(),
