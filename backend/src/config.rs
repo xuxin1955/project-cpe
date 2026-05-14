@@ -8,6 +8,7 @@
  * 
  * Copyright (c) 2025 by 1orz, All Rights Reserved. 
  */
+
 //! 配置管理模块
 //!
 //! 使用 JSON 文件存储用户配置，支持热更新
@@ -36,23 +37,20 @@ pub struct WebhookConfig {
     pub call_template: String,  // 通话 payload 模板
 }
 
-/// 默认短信模板 (飞书机器人格式)
+/// 默认短信模板 (PushPlus)
 fn default_sms_template() -> String {
     r#"{
-  "msg_type": "text",
-  "content": {
-    "text": "📱 短信通知\n发送方: {{phone_number}}\n内容: {{content}}\n时间: {{timestamp}}"
-  }
+  "title": "新短信",
+  "content": "发件人: {{phone_number}}\n内容: {{content}}",
+  "time": "{{timestamp}}"
 }"#.to_string()
 }
 
-/// 默认通话模板 (飞书机器人格式)
+/// 默认通话模板 (PushPlus)
 fn default_call_template() -> String {
     r#"{
-  "msg_type": "text",
-  "content": {
-    "text": "📞 来电通知\n号码: {{phone_number}}\n类型: {{direction}}\n时间: {{start_time}}\n时长: {{duration}}秒\n已接听: {{answered}}"
-  }
+  "title": "来电通知",
+  "content": "号码: {{phone_number}}\n类型: {{direction_cn}}\n时间: {{start_time}}\n时长: {{duration}} 秒\n已接听: {{answered}}"
 }"#.to_string()
 }
 
@@ -207,4 +205,3 @@ pub fn get_default_config_path() -> PathBuf {
         .unwrap_or_else(|| PathBuf::from("."))
         .join("config.json")
 }
-
