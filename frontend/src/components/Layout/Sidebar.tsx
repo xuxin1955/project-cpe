@@ -98,7 +98,7 @@ export default function Sidebar({ drawerWidth, mobileOpen, desktopOpen, onClose,
       {/* Footer with copyright */}
       <Box sx={{ p: 2, borderTop: 1, borderColor: 'divider' }}>
         <Link
-          href="https://github.com/1orz/project-cpe"
+          href="https://github.com/xuxin1955/project-cpe"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -115,14 +115,14 @@ export default function Sidebar({ drawerWidth, mobileOpen, desktopOpen, onClose,
         >
           <GitHubIcon sx={{ fontSize: 16 }} />
           <Typography variant="caption" color="inherit">
-            1orz/project-cpe
+            xuxin1955/project-cpe
           </Typography>
         </Link>
         <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mt: 0.5 }}>
           v{__APP_VERSION__} ({__GIT_BRANCH__}/{__GIT_COMMIT__})
         </Typography>
         <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mt: 0.5 }}>
-          Copyright 2025 1orz
+          Copyright 2026 xuxin1955
         </Typography>
       </Box>
     </Box>
